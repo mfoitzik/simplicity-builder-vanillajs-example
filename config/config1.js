@@ -1,4 +1,3 @@
-const plainTextBlock = `<div data-sbblock="Plain  Text" data-sbzone="hovo" data-sbeditor="plaintext">Plain Text</div>`;
 const twoColBlock = `<section class="twocol" data-sbblock="Two Column Section" data-sbsettings="5" data-sbzone="ho" data-parameters='{"leftWidth":"50%","leftColor":"#fbe4c4ff","rightColor":"#b8e1e7ff","gap":"2rem","gapLineWidth":"2px","gapLineColor":"#394f87ff","columnPadding":"1rem","minHeight":"100%","bottomMargin":"1rem"}' data-styleid="twocolumn-stylevars">
 <h2 class="twocol-heading" data-sbblock="Heading" data-heading="h2" data-sbeditor="plaintext" data-sbsettings="4">Two-Column Section Heading</h2>
 <div class="twocol-left" data-sbblock="Rich Text" data-sbeditor="richtext">
@@ -108,12 +107,12 @@ const twoColBlock = `<section class="twocol" data-sbblock="Two Column Section" d
 
 const config = {
   "helpUrl": "",
-  "assetsLocation": "https://www.mifo.com/assets",
+  "assetsLocation": "##BASEADDRESS##/external/assets",
   "license": "B4A110b7e96dd71e77917d6b1523b94b6eaa79933d2a2879561b9e8",
   "devKey":"594S4KAFS6R",
   "themeColor": "#136853",
   "themeDarkColor": "#0e4337",
-"cleanupIds": ["tsid1","tsid2"],
+"cleanupIds": ["scriptSbUtility"],
 "cleanupStrings": ["https://www.simplicityblocks.com/","https://www.mifo.com/"],
 "cleanupAttributes": ["data-custom1","data-custom2"],
 "blockSections": [
@@ -121,30 +120,30 @@ const config = {
           "heading": "Content EditorsXYZ123",
           "blocks": [
               {
-                  "icon":"<img src=\"https://simplicityblocks.com/public/icons/plaintext.png\" />",
+                  "icon":"<img src=\"##BASEADDRESS##/templates/icons/plaintext.png\" />",
                   "label": "Plain Text",
                   "tooltipHeading":"Plain Text Block",
-                  "tooltipImage":"https://simplicityblocks.com/public/icons/plaintext-sample.png",
+                  "tooltipImage":"##BASEADDRESS##/templates/icons/plaintext-sample.png",
                   "tooltipText":"Plain text editor that allows for text editing only. No HTML or formatting.",
-                  "dragImage":"https://simplicityblocks.com/public/icons/plaintext-sample.png",
-                  "html": encodeURIComponent(plainTextBlock)
+                  "dragImage":"##BASEADDRESS##/templates/icons/plaintext-sample.png",
+                  "html": "<div data-sbblock=\"Plain  Text\" data-sbzone=\"hovo\" data-sbeditor=\"plaintext\">Plain Text</div>"
               },
               {
-                  "icon":"<img src=\"https://simplicityblocks.com/public/icons/richtext.png\" />",
+                  "icon":"<img src=\"##BASEADDRESS##/templates/icons/richtext.png\" />",
                   "label": "Rich Text",
                   "tooltipHeading":"Rich Text Block",
-                  "tooltipImage":"https://simplicityblocks.com/public/icons/richtext-sample.png",
+                  "tooltipImage":"##BASEADDRESS##/templates/icons/richtext-sample.png",
                   "tooltipText":"The rich text editor allows for editing and formatting text, inserting images, linking, etc.",
-                  "dragImage":"https://simplicityblocks.com/public/icons/richtext-sample.png",
+                  "dragImage":"##BASEADDRESS##/templates/icons/richtext-sample.png",
                   "html":"<div data-sbblock=\"Rich  Text\" data-sbzone=\"hovo\" data-sbeditor=\"richtext\">Rich Text</div>"
               },
               {
-                  "icon":"<img src=\"https://simplicityblocks.com/public/icons/code.png\" />",
+                  "icon":"<img src=\"##BASEADDRESS##/templates/icons/code.png\" />",
                   "label": "Code",
                   "tooltipHeading":"Code Block",
-                  "tooltipImage":"https://simplicityblocks.com/public/icons/code-sample.png",
+                  "tooltipImage":"##BASEADDRESS##/templates/icons/code-sample.png",
                   "tooltipText":"The code editor allows full access to the blocks inner HTML. Inline scripting can be input by the user.",
-                  "dragImage":"https://simplicityblocks.com/public/icons/code-sample.png",
+                  "dragImage":"##BASEADDRESS##/templates/icons/code-sample.png",
                   "html":"<div data-sbblock=\"Code\" data-sbzone=\"hovo\" data-sbeditor=\"code\">Code</div>"
               }
           ]
@@ -153,12 +152,12 @@ const config = {
           "heading": "Headings",
           "blocks": [
               {
-                  "icon":"<img src=\"https://simplicityblocks.com/public/icons/h1.png\" />",
+                  "icon":"<img src=\"##BASEADDRESS##/templates/icons/h1.png\" />",
                   "label": "Heading",
                   "tooltipHeading":"HTML Heading",
-                  "tooltipImage":"https://simplicityblocks.com/public/icons/HeadingBlockImage.png",
+                  "tooltipImage":"##BASEADDRESS##/templates/icons/HeadingBlockImage.png",
                   "tooltipText":"An HTML heading that can be configured from H1 through H6. Defaults to H1.",
-                  "dragImage":"https://simplicityblocks.com/public/icons/HeadingBlockImage.png",
+                  "dragImage":"##BASEADDRESS##/templates/icons/HeadingBlockImage.png",
                   "html":"<h1 data-sbblock=\"Heading\" data-sbzone=\"ho\" data-sbeditor=\"plaintext\" data-sbsettings=\"4\" data-heading=\"h1\">Heading Text</h1>"
               }
           ]
@@ -167,22 +166,22 @@ const config = {
           "heading": "Inner Layouts",
           "blocks": [
               {
-                  "icon":"<img src=\"https://simplicityblocks.com/public/icons/2col.png\" />",
+                  "icon":"<img src=\"##BASEADDRESS##/templates/icons/2col.png\" />",
                   "label": "2-Col Layout",
                   "tooltipHeading":"Two Column Layout",
-                  "tooltipImage":"https://simplicityblocks.com/public/icons/TwoColumnBlockImage.png",
+                  "tooltipImage":"##BASEADDRESS##/templates/icons/TwoColumnBlockImage.png",
                   "tooltipText":"A responsive two-column layout. Can be used to fill an entire page or as a section of a page.",
-                  "dragImage":"https://simplicityblocks.com/public/icons/TwoColumnBlockImage.png",
+                  "dragImage":"##BASEADDRESS##/templates/icons/TwoColumnBlockImage.png",
                   "html":encodeURIComponent(twoColBlock)
               }
           ]
       }
 
   ],
-  "imageSelections" : [{"url":"https://www.mifo.com/testimages/image1.jpg","thumbnailUrl":"https://www.mifo.com/testimages/image1_tn.jpg"},
-      {"url":"https://www.mifo.com/testimages/image2.jpg","thumbnailUrl":"https://www.mifo.com/testimages/image2_tn.jpg"},
-      {"url":"https://www.mifo.com/testimages/image3.jpg","thumbnailUrl":"https://www.mifo.com/testimages/image3_tn.jpg"},
-      {"url":"https://www.mifo.com/testimages/image4.jpg","thumbnailUrl":"https://www.mifo.com/testimages/image4_tn.jpg"}],
+  "imageSelections" : [{"url":"##BASEADDRESS##/templates/editorimages/image1.jpg","thumbnailUrl":"##BASEADDRESS##/templates/editorimages/image1_tn.jpg"},
+      {"url":"##BASEADDRESS##/templates/editorimages/image2.jpg","thumbnailUrl":"##BASEADDRESS##/templates/editorimages/image2_tn.jpg"},
+      {"url":"##BASEADDRESS##/templates/editorimages/image3.jpg","thumbnailUrl":"##BASEADDRESS##/templates/editorimages/image3_tn.jpg"},
+      {"url":"##BASEADDRESS##/templates/editorimages/image4.jpg","thumbnailUrl":"##BASEADDRESS##/templates/editorimages/image4_tn.jpg"}],
   "attributeEditors": [
       {
           "id": "1",
@@ -217,56 +216,56 @@ const config = {
                           "value": "",
                           "selections": [
                               {
-                                  "url": "https://www.mifo.com/testimages/image4.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image4_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image4.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image4_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               }
                           ]
                       },
@@ -351,16 +350,16 @@ const config = {
                           "value": "",
                           "selections": [
                               {
-                                  "url": "https://www.mifo.com/testimages/image4.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image4_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image4.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image4_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               }
                           ],
                           "heading": "My Image Selector xyz",
@@ -427,16 +426,16 @@ const config = {
                           "value": "",
                           "selections": [
                               {
-                                  "url": "https://www.mifo.com/testimages/image1xxxxxxx.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image1_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image1xxxxxxx.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image1_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image2.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image2_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image2.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image2_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image3.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image3_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image3.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image3_tn.jpg"
                               }
                           ],
                           "heading": "My Image Selector",
@@ -500,56 +499,56 @@ const config = {
                           "value": "",
                           "selections": [
                               {
-                                  "url": "https://www.mifo.com/testimages/image4.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image4_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image4.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image4_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               }
                           ]
                       },
@@ -634,16 +633,16 @@ const config = {
                           "value": "",
                           "selections": [
                               {
-                                  "url": "https://www.mifo.com/testimages/image4.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image4_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image4.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image4_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image5.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image5_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image5.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image5_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image6.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image6_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image6.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image6_tn.jpg"
                               }
                           ],
                           "heading": "My Image Selector xyz",
@@ -710,16 +709,16 @@ const config = {
                           "value": "",
                           "selections": [
                               {
-                                  "url": "https://www.mifo.com/testimages/image1xxxxxxx.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image1_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image1xxxxxxx.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image1_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image2.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image2_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image2.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image2_tn.jpg"
                               },
                               {
-                                  "url": "https://www.mifo.com/testimages/image3.jpg",
-                                  "thumbnailUrl": "https://www.mifo.com/testimages/image3_tn.jpg"
+                                  "url": "##BASEADDRESS##/templates/editorimages/image3.jpg",
+                                  "thumbnailUrl": "##BASEADDRESS##/templates/editorimages/image3_tn.jpg"
                               }
                           ],
                           "heading": "My Image Selector",

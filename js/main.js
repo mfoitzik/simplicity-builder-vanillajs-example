@@ -6,8 +6,9 @@ if (document.readyState === "loading") {
     init();
   }
   function init() {
-    console.log("I have inited");
+    const currentHost = window.location.protocol + "//" + window.location.host;
     const sb = document.getElementById("sbuilder");
-    sb.setConfig(getConfig());
-    sb.setContent(template1);
+    let config = JSON.stringify(getConfig());
+    sb.setConfig(JSON.parse(config.replaceAll("##BASEADDRESS##", currentHost)));
+    sb.setContent(template1.replaceAll("##BASEADDRESS##", currentHost));
   }
