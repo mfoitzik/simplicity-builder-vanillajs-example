@@ -105,6 +105,96 @@ let template1 = `<!DOCTYPE html>
     <script src="##BASEADDRESS##/templates/js/menu.js"><\/script>
       <script type="module" id="scriptSbUtility">
         import { changeElementType } from '##BASEADDRESS##/sbassets/js/simplicityUtilities.js';
+        function changeCssVariableValue(stylesheetID, variableName, variableValue) {
+            var r = document.querySelector(':root');
+            r.style.setProperty(variableName, variableValue);
+            const vstyle = document.getElementById(stylesheetID);
+            if (vstyle && vstyle.sheet.cssRules){
+              let newCssText = '';
+                for (const element of vstyle.sheet.cssRules) {
+                    if (element.selectorText != ':root') {
+                        newCssText += element.cssText + '\\n';
+                    } else {
+                        if (element.style) {
+                            const props = [...element.style]
+                            .map((propName) => [
+                            propName.trim(),
+                            element.style.getPropertyValue(propName).trim()
+                            ]);
+                            let tempRootStyle = ':root {\\n';
+                            props.forEach((prop) => {
+                                let outProp = prop[1];
+                                if (prop[0] == variableName) {
+                                  outProp = variableValue;
+                                }
+                                tempRootStyle += prop[0] + ": " + outProp + ";\\n";
+                            });
+                            newCssText += tempRootStyle + '}\\n';
+                        }
+                    }
+                }
+                vstyle.innerHTML = newCssText;
+            }
+        }
+        window.addEventListener('message', (event) => {
+            if (event.data.command === 'run') {
+              switch(event.data.function) {
+                case 'changeElementType':
+                  const head = document.getElementById(event.data.id);
+                  const getHeadingType = head.getAttribute('data-heading');
+                  changeElementType(head, getHeadingType);
+                  window.parent.postMessage(
+                    {
+                      command: 'registerElement',
+                      content: event.data.id,
+                    },
+                    '*'
+                  );
+                  break;
+                case 'changeCssVariableValue':
+                const el = document.getElementById(event.data.id);
+                  const obj = JSON.parse(el.getAttribute('data-parameters'));
+                  const styleid =el.getAttribute('data-styleid');
+                  for (let key of Object.keys(obj)) {
+                      let outKey = '';
+                      switch(key) {
+                        case 'leftWidth':
+                          outKey = '--twocol-leftside-width';
+                          let rightWidth = 100 - parseInt(obj[key]) + 'fr';
+                          obj[key] = parseInt(obj[key]) + 'fr';
+                          changeCssVariableValue(styleid, '--twocol-rightside-width', rightWidth);
+                          break;
+                        case 'leftColor':
+                          outKey = '--twocol-leftside-backgroundColor';
+                          break;
+                        case 'rightColor':
+                          outKey = '--twocol-rightside-backgroundColor';
+                          break;
+                        case 'gap':
+                          outKey = '--twocol-gap';
+                          break;
+                        case 'gapLineWidth':
+                          outKey = '--twocol-gap-line-width';
+                          break;
+                        case 'gapLineColor':
+                          outKey = '--twocol-gap-line-color';
+                          break;
+                        case 'columnPadding':
+                          outKey = '--twocol-padding';
+                          break;
+                        case 'bottomMargin':
+                          outKey = '--twocol-margin-bottom';
+                          break;
+                        case 'minHeight':
+                          outKey = '--twocol-min-height';
+                          break;
+                      }
+                      changeCssVariableValue(styleid, outKey, obj[key]);
+                  }
+                  break;
+              }
+            }
+          })
       <\/script>
 <!--SB-TEMPLATE-END-->
 </body>
