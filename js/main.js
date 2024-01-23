@@ -11,4 +11,14 @@ if (document.readyState === "loading") {
     let config = JSON.stringify(getConfig());
     sb.setConfig(JSON.parse(config.replaceAll("##BASEADDRESS##", currentHost)));
     sb.setContent(template1.replaceAll("##BASEADDRESS##", currentHost));
+
+    const outputText = document.getElementById("output");
+    sb.addEventListener('publish', function(e) {
+      outputText.value = '';
+      outputText.value = e.detail;
+    });
+    sb.addEventListener('save', function(e) {
+      outputText.value = '';
+      outputText.value = e.detail;
+    });
   }
