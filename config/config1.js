@@ -120,7 +120,7 @@ const config = {
 	"blockSections": [{
 			"heading": "Content Editors",
 			"blocks": [{
-					"icon": "<img src=\"##BASEADDRESS##/templates/icons/plaintext.png\" />",
+					"icon": "<img src=\"##BASEADDRESS##/templates/icons/file-text.svg\" />",
 					"label": "Plain Text",
 					"tooltipHeading": "Plain Text Block",
 					"tooltipImage": "##BASEADDRESS##/templates/icons/plaintext-sample.png",
@@ -129,7 +129,7 @@ const config = {
 					"html": encodeURIComponent(`<div data-sbblock="Plain  Text" data-sbzone="hovo" data-sbeditor="plaintext" style="width: 100%;">Plain Text</div>`)
 				},
 				{
-					"icon": "<img src=\"##BASEADDRESS##/templates/icons/richtext.png\" />",
+					"icon": "<img src=\"##BASEADDRESS##/templates/icons/file-earmark-richtext.svg\" />",
 					"label": "Rich Text",
 					"tooltipHeading": "Rich Text Block",
 					"tooltipImage": "##BASEADDRESS##/templates/icons/richtext-sample.png",
@@ -138,7 +138,7 @@ const config = {
 					"html": encodeURIComponent(`<div data-sbblock="Rich  Text" data-sbzone="hovo" data-sbeditor="richtext">Rich Text</div>`)
 				},
 				{
-					"icon": "<img src=\"##BASEADDRESS##/templates/icons/code.png\" />",
+					"icon": "<img src=\"##BASEADDRESS##/templates/icons/code.svg\" />",
 					"label": "Code",
 					"tooltipHeading": "Code Block",
 					"tooltipImage": "##BASEADDRESS##/templates/icons/code-sample.png",
@@ -151,7 +151,7 @@ const config = {
 		{
 			"heading": "Headings",
 			"blocks": [{
-				"icon": "<img src=\"##BASEADDRESS##/templates/icons/h1.png\" />",
+				"icon": "<img src=\"##BASEADDRESS##/templates/icons/type-h1.svg\" />",
 				"label": "Heading",
 				"tooltipHeading": "HTML Heading",
 				"tooltipImage": "##BASEADDRESS##/templates/icons/HeadingBlockImage.png",
@@ -163,7 +163,7 @@ const config = {
 		{
 			"heading": "Inner Layouts",
 			"blocks": [{
-				"icon": "<img src=\"##BASEADDRESS##/templates/icons/2col.png\" />",
+				"icon": "<img src=\"##BASEADDRESS##/templates/icons/layout-split.svg\" />",
 				"label": "2-Col Layout",
 				"tooltipHeading": "Two Column Layout",
 				"tooltipImage": "##BASEADDRESS##/templates/icons/TwoColumnBlockImage.png",
