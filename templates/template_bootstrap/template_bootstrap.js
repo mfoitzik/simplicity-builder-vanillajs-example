@@ -1,7 +1,7 @@
-let template2 = `<!doctype html>
+let template_bootstrap = `<!doctype html>
 <html lang="en" data-bs-theme="auto">
   <head>
-  <script src="##BASEADDRESS##/templates/js/color-modes.js"><\/script>
+  <script src="##BASEADDRESS##/templates/template_bootstrap/js/color-modes.js"><\/script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="A starting template for Bootstrap">
@@ -188,7 +188,7 @@ let template2 = `<!doctype html>
   </nav>
 </header>
 
-<main data-sbblock="Main Conent Area" data-sbzone="hi">
+<main data-sbblock="Main Conent Area" data-sbzone="hi" class="p-3">
 
   <div>test</div>
 
@@ -204,4 +204,4 @@ let template2 = `<!doctype html>
     </body>
 </html>
 `;
-export default template2;
+export default template_bootstrap;

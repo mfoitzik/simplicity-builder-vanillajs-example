@@ -111,7 +111,7 @@ const config = {
 	"helpUrl": "",
 	"assetsLocation": "##BASEADDRESS##/external/assets",
 	"license": "B4A110b7e96dd71e77917d6b1523b94b6eaa79933d2a2879561b9e8",
-	"devKey": "594S4KAFS6R",
+	"devKey": "MD9X_EFDR7A",
 	"themeColor": "#136853",
 	"themeDarkColor": "#0e4337",
 	"cleanupIds": ["scriptSbUtility"],
@@ -311,7 +311,7 @@ const config = {
 	]
 }
 
-function getConfig() {
+function getConfigBasic() {
 	return config;
 }
-export default getConfig;
+export default getConfigBasic;

@@ -4,59 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simplicity Builder&trade; Vanilla JavaScript Example</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            width: 100vw;
-        }
-        .wrapper {
-            display: grid;
-            grid-template-columns: 25% 75%;
-            margin: 0;
-            overflow: hidden;
-            height: 100vh;
-        }
-        .left {
-            background-color: #fdfdfd;
-            border-right: 3px solid #444444;
-            grid-column-start: 1;
-            grid-column-end: 2;
-            padding:10px;
-            display:flex;
-            flex-direction: column;
-        }
-        .right {
-            grid-column-start: 2;
-            grid-column-end: 3;
-        }
-        .h1, p {
-            margin-bottom: 8px;;
-        }
-        p {
-            margin-left:15px;
-        }
-        textarea {
-            width:100%;
-            height:300px;
-            scroll-behavior: auto;
-            white-space: pre;
-            flex:1;
-        }
-        label {
-            font-weight:bold;
-            display: inline-block;
-            margin-bottom:4px;
-        }
-    </style>
+    <link href="styles/main.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="wrapper">
         <div class="left">
             <h1>Simplicity Builder&trade; Example</h1>
+            <p><a href="#" id="helloWorldExample">Hello World Example</a></p>
             <p><a href="#" id="basicExample">Basic Example</a></p>
             <p><a href="#" id="bootstrapExample">Bootstrap Example</a></p>
             <label for="output">Save / Publish Output:</label>
