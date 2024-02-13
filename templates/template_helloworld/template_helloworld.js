@@ -35,16 +35,39 @@ let template_helloworld = `<!DOCTYPE html>
       width: 100%;
       padding: .5rem;
     }
-    .circ {
+    .wrapper {
         width:100%;
         border: 2px solid red;
-        height: 200px;
+        min-height: 200px;
+        padding: 1rem;
       }
-      .circ div {
-        height: 196px;
-        width: 196px;
+      .circle {
+        display: inline-block;
+        height: 120px;
+        width: 120px;
         background-color: green;
         border-radius: 50%;
+        border-width: 3px;
+        border-color: black;
+      }
+      .circle.borderon {
+        border-style: solid;
+      }
+      .circle-borderoff {
+        border-style: none.
+      }
+      .wrapper p {
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+      }
+      .center {
+        text-align: center;
+      }
+      .left {
+        text-align: left;
+      }
+      .right {
+        text-align: right;
       }
   </style>
 </head>
@@ -58,7 +81,7 @@ let template_helloworld = `<!DOCTYPE html>
   <footer>
     Footer Area
   </footer>
-  <script src="##BASEADDRESS##/templates/template_helloworld/circleUtility.js"><\/script>
+  <script src="##BASEADDRESS##/templates/template_helloworld/circleUtility.js" id="helloworld_utility"><\/script>
   <!--SB-TEMPLATE-END-->
 </body>
 </html>`;

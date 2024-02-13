@@ -27,10 +27,21 @@ if (document.readyState === "loading") {
             case 'circleFunction':
               const main = document.getElementById(event.data.id);
               const obj = JSON.parse(main.getAttribute('data-settingsobj'));
-              const textHolder = main.querySelector("p");
-              const circle = main.querySelector("div");
+              const obj_circle = JSON.parse(main.getAttribute('data-circle'));
+              const circle_wrapper = main.querySelector(".cwrap");
+              const textHolder = main.querySelector("h1");
+              const circle = main.querySelector(".circle");
               textHolder.innerText = obj["displaytext"];
               circle.style.backgroundColor = obj["circlecolor"];
+              circle_wrapper.classList.remove("left", "center", "right");
+              circle_wrapper.classList.add(obj_circle["align"]);
+              circle.classList.remove("borderoff", "borderon");
+              if (obj_circle["border"] == true) {
+                circle.classList.add("borderon");
+              } else {
+                circle.classList.add("borderoff");
+              }
+
               break;
           }
         }

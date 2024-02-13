@@ -1,6 +1,8 @@
 const config = {
 	"license": "",
 	"devKey": "MD9X_EFDR7A",
+    "cleanupAttributes": ["data-settingsobj"],
+    "cleanupIds": ["helloworld_utility"],
     "blockSections": [{
         "heading": "Content Editors",
         "blocks": [{
@@ -40,9 +42,12 @@ const config = {
                 "tooltipImage": "##BASEADDRESS##/sbassets/blocks/shapes_circle/circle-sample.jpg",
                 "tooltipText": "Simple circle shape for demonstration.",
                 "dragImage": "##BASEADDRESS##/sbassets/blocks/shapes_circle/circle-sample.jpg",
-                "html": encodeURIComponent(`<div data-sbblock="Circle Shape" data-sbzone="ho" class="circ" data-sbsettings="ae1" data-settingsobj='{"displaytext":"This is a circle:", "circlecolor":"#008800"}'>
-                <p>This is a circle:</p>    
-                <div></div>
+                "html": encodeURIComponent(`<div data-sbblock="Circle Shape" data-sbzone="ho" class="wrapper" data-sbsettings="ae1" data-settingsobj='{"displaytext":"This is a circle:", "circlecolor":"#008800"}' data-circle='{"align":"left", "border":false}'>
+                <h1>This is a circle:</h1>    
+                <div class="cwrap">
+                    <div class="circle borderoff"></div>
+                </div>
+                <p>This is a long description of a circle...</p>
                 </div>`)
             }
             ]
@@ -65,7 +70,7 @@ const config = {
                         {
                             "heading": "Circle Heading Text",
                             "type": "text",
-                            "mode": "textarea",
+                            "mode": "text",
                             "attribute": "displaytext",
                             "value": "This is a circle:"
                         },
@@ -74,6 +79,27 @@ const config = {
                             "type": "color",
                             "attribute": "circlecolor",
                             "value": "#008800"
+                        }
+                    ]
+                },
+                {
+                    "heading": "Circle Settings",
+                    "type": "object",
+                    "target": "data-circle",
+                    "controls": [
+                        {
+                            "heading": "Circle Align",
+                            "type": "select",
+                            "attribute": "align",
+                            "value": "",
+                            "selections": ["left", "center", "right"]
+                        },
+                        {
+                            "heading": "Show Border",
+                            "type": "toggle",
+                            "attribute": "border",
+                            "mode": "bool",
+                            "value": false
                         }
                     ]
                 }
