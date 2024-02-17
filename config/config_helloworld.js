@@ -1,55 +1,24 @@
+import block_circle from '../sbassets/blocks/shapes_circle/index.js';
+import block_plainText from '../sbassets/blocks/common_plainText/index.js';
+import block_richText from '../sbassets/blocks/common_richText/index.js';
+import block_code from '../sbassets/blocks/common_code/index.js';
 const config = {
 	"license": "",
 	"devKey": "MD9X_EFDR7A",
+    "themeColor": "#7d5828",
+	"themeDarkColor": "#101820",
+    "helpUrl":"##BASEADDRESS##/helpDoc/index.html",
     "cleanupAttributes": ["data-settingsobj"],
     "cleanupIds": ["helloworld_utility"],
     "blockSections": [{
         "heading": "Content Editors",
-        "blocks": [{
-                "icon": "<img src=\"##BASEADDRESS##/templates/icons/file-text.svg\" />",
-                "label": "Plain Text",
-                "tooltipHeading": "Plain Text Block",
-                "tooltipImage": "##BASEADDRESS##/templates/icons/plaintext-sample.png",
-                "tooltipText": "Plain text editor that allows for text editing only. No HTML or formatting.",
-                "dragImage": "##BASEADDRESS##/templates/icons/plaintext-sample.png",
-                "html": encodeURIComponent(`<div data-sbblock="Plain  Text" data-sbzone="hovo" data-sbeditor="plaintext" style="width: 100%;">Plain Text</div>`)
-            },
-            {
-                "icon": "<img src=\"##BASEADDRESS##/templates/icons/file-earmark-richtext.svg\" />",
-                "label": "Rich Text",
-                "tooltipHeading": "Rich Text Block",
-                "tooltipImage": "##BASEADDRESS##/templates/icons/richtext-sample.png",
-                "tooltipText": "The rich text editor allows for editing and formatting text, inserting images, linking, etc.",
-                "dragImage": "##BASEADDRESS##/templates/icons/richtext-sample.png",
-                "html": encodeURIComponent(`<div data-sbblock="Rich  Text" data-sbzone="hovo" data-sbeditor="richtext">Rich Text</div>`)
-            },
-            {
-                "icon": "<img src=\"##BASEADDRESS##/templates/icons/code.svg\" />",
-                "label": "Code",
-                "tooltipHeading": "Code Block",
-                "tooltipImage": "##BASEADDRESS##/templates/icons/code-sample.png",
-                "tooltipText": "The code editor allows full access to the blocks inner HTML. Inline scripting can be input by the user.",
-                "dragImage": "##BASEADDRESS##/templates/icons/code-sample.png",
-                "html": encodeURIComponent(`<div data-sbblock="Code" data-sbzone="hovo" data-sbeditor="code">Code</div>`)
-            }
+        "blocks": [block_plainText,
+            block_richText,
+            block_code
         ]},
         {"heading": "Shapes",
         "blocks":[
-            {
-                "icon": "<img src=\"##BASEADDRESS##/sbassets/blocks/shapes_circle/circle.svg\" />",
-                "label": "Circle Shape",
-                "tooltipHeading": "Circle Shape",
-                "tooltipImage": "##BASEADDRESS##/sbassets/blocks/shapes_circle/circle-sample.jpg",
-                "tooltipText": "Simple circle shape for demonstration.",
-                "dragImage": "##BASEADDRESS##/sbassets/blocks/shapes_circle/circle-sample.jpg",
-                "html": encodeURIComponent(`<div data-sbblock="Circle Shape" data-sbzone="ho" class="wrapper" data-sbsettings="ae1" data-settingsobj='{"displaytext":"This is a circle:", "circlecolor":"#008800"}' data-circle='{"align":"left", "border":false}'>
-                <h1>This is a circle:</h1>    
-                <div class="cwrap">
-                    <div class="circle borderoff"></div>
-                </div>
-                <p>This is a long description of a circle...</p>
-                </div>`)
-            }
+            block_circle
             ]
         }
         
@@ -63,7 +32,7 @@ const config = {
             "callback": "circleFunction",
             "controlSections": [
                 {
-                    "heading": "Section 1",
+                    "heading": "Circle Container",
                     "type": "object",
                     "target": "data-settingsobj",
                     "controls": [
@@ -75,11 +44,68 @@ const config = {
                             "value": "This is a circle:"
                         },
                         {
-                            "heading": "Circle Color",
-                            "type": "color",
-                            "attribute": "circlecolor",
-                            "value": "#008800"
+                            "heading": "Circle Bottom Text",
+                            "type": "text",
+                            "mode": "textarea",
+                            "attribute": "bottomtext",
+                            "value": "This is a long description of a circle..."
+                        },
+                        {
+                            "heading": "Background Image",
+                            "type": "image",
+                            "attribute": "background",
+                            "value": "",
+                            "selections": [
+                                {
+                                    "url": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground1.jpg",
+                                    "thumbnailUrl": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground1_tn.jpg"
+                                },
+                                {
+                                    "url": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground2.jpg",
+                                    "thumbnailUrl": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground2_tn.jpg"
+                                },
+                                {
+                                    "url": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground3.jpg",
+                                    "thumbnailUrl": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground3_tn.jpg"
+                                },
+                                {
+                                    "url": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground4.jpg",
+                                    "thumbnailUrl": "##BASEADDRESS##/sbassets/blocks/shapes_circle/CircleBackground4_tn.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "heading": "Container Border",
+                            "type": "slider",
+                            "attribute": "cborder",
+                            "value": 1,
+                            "uom": "px",
+                            "min": 1,
+                            "max": 15,
+                            "selections": [
+                                "px",
+                                "pt"
+                            ]
+                        },
+                        {
+                            "type": "checkset",
+                            "value": [],
+                            "selections": [
+                                {
+                                    "label": "Rounded Corners",
+                                    "value": "rounded",
+                                    "color": "green"
+                                },
+                                {
+                                    "label": "Drop Shadow",
+                                    "value": "shadow",
+                                    "color": "green"
+                                }
+                            ],
+                            "heading": "Border Options",
+                            "attribute": "options"
                         }
+                        
                     ]
                 },
                 {
@@ -87,6 +113,12 @@ const config = {
                     "type": "object",
                     "target": "data-circle",
                     "controls": [
+                        {
+                            "heading": "Circle Color",
+                            "type": "color",
+                            "attribute": "circlecolor",
+                            "value": "#008800"
+                        },
                         {
                             "heading": "Circle Align",
                             "type": "select",
@@ -108,7 +140,4 @@ const config = {
     ]
 }
 
-function getConfigHelloWorld() {
-	return config;
-}
-export default getConfigHelloWorld;
+export default config;

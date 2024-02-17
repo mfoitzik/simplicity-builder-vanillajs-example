@@ -1,15 +1,4 @@
-if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", init);
-  } else {
-    init();
-  }
-
-  function init() {
-    console.log("test");
-  }
-
-
-  (function() {
+(function() {
     function init() {
       //You need to add a window message listener
       //This gets triggered by the Simplicity Builder(TM) Attribute Editor
@@ -31,17 +20,31 @@ if (document.readyState === "loading") {
               const circle_wrapper = main.querySelector(".cwrap");
               const textHolder = main.querySelector("h1");
               const circle = main.querySelector(".circle");
+              const bottomText = main.querySelector("p");
               textHolder.innerText = obj["displaytext"];
-              circle.style.backgroundColor = obj["circlecolor"];
+              bottomText.innerText = obj["bottomtext"];
               circle_wrapper.classList.remove("left", "center", "right");
               circle_wrapper.classList.add(obj_circle["align"]);
+              circle.style.backgroundColor = obj_circle["circlecolor"];
               circle.classList.remove("borderoff", "borderon");
               if (obj_circle["border"] == true) {
                 circle.classList.add("borderon");
               } else {
                 circle.classList.add("borderoff");
               }
-
+              if (obj["background"] != "") {
+                main.style.backgroundImage = "url('" + obj["background"] + "')";
+              } else {
+                main.style.backgroundImage = "unset";
+              }
+              main.style.borderWidth = obj["cborder"];
+              main.classList.remove("rounded", "shadow");
+              if (obj["options"].includes("rounded")) {
+                main.classList.add("rounded");
+              }
+              if (obj["options"].includes("shadow")) {
+                main.classList.add("shadow");
+              }
               break;
           }
         }

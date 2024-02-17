@@ -69,6 +69,12 @@ let template_helloworld = `<!DOCTYPE html>
       .right {
         text-align: right;
       }
+      .rounded {
+        border-radius: 20px;
+      }
+      .shadow {
+        box-shadow: 5px 10px 8px #888888;
+      }
   </style>
 </head>
 <body>
