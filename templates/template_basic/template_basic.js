@@ -100,7 +100,7 @@ let template_basic = `<!DOCTYPE html>
     </main>
 
     <footer>
-        &copy; <script>document.write(new Date().getFullYear())<\/script> My Company, Inc.
+        &copy; <span id="footerYearText"></span> My Company, Inc.<script>const thisYear = new Date().getFullYear();const yearEl = document.getElementById("footerYearText");yearEl.innerText = thisYear;<\/script>
     </footer>
     <script src="##BASEADDRESS##/templates/template_basic/js/menu.js"><\/script>
       <script type="module" id="scriptSbUtility">

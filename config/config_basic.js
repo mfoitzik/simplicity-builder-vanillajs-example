@@ -8,8 +8,8 @@ import block_code from '../sbassets/blocks/common_code/index.js';
 const config = {
 	"helpUrl": "##BASEADDRESS##/helpDoc/index.html",
 	"assetsLocation": "##BASEADDRESS##/external/assets",
-	"license": "B4A110b7e96dd71e77917d6b1523b94b6eaa79933d2a2879561b9e8",
-	"devKey": "MD9X_EFDR7A",
+	"license": "",
+	"devKey": "XXXXXX",
 	"themeColor": "#136853",
 	"themeDarkColor": "#0e4337",
 	"cleanupIds": ["scriptSbUtility"],
@@ -165,6 +165,36 @@ const config = {
 					}
 				]
 			}]
+		},
+		{
+			"id": "2",
+			"editorName": "atted",
+			"editorHeading": "Heading Type Selector",
+			"mode": "constant",
+			"callback": "changeElementType",
+			"controlSections": [
+				{
+					"heading": "Headings",
+					"type": "single",
+					"target": "",
+					"controls": [
+						{
+							"heading": "Heading Type",
+							"type": "select",
+							"attribute": "data-heading",
+							"value": "",
+							"selections": [
+								{"label": "Heading 1", "value":"h1"},
+								{"label": "Heading 2", "value":"h2"},
+								{"label": "Heading 3", "value":"h3"},
+								{"label": "Heading 4", "value":"h4"},
+				{"label": "Heading 5", "value":"h5"},
+				{"label": "Heading 6", "value":"h6"}
+							]
+						}
+					]
+				}
+			]
 		}
 	]
 }
