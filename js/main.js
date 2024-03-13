@@ -16,11 +16,26 @@ function init() {
   outputText.value = '';
   let config = JSON.stringify(helloWorldConfig);
   sb.addEventListener("ready", function() {
+    console.log("I AM READY");
     sb.setConfig(JSON.parse(config.replaceAll("##BASEADDRESS##", currentHost)));
     sb.setContent(template_helloworld.replaceAll("##BASEADDRESS##", currentHost));
-  });
+    sb.addEventListener('publish', function(e) {
+    
+      outputText.value = '';
+      outputText.value = e.detail;
+    });
   
+    sb.addEventListener('save', function(e) {
+      outputText.value = '';
+      outputText.value = e.detail;
+    });
+  });
+  window.addEventListener("message", function(e){
+    console.log("message");
+    console.log(e);
+  })
   sb.addEventListener('publish', function(e) {
+    
     outputText.value = '';
     outputText.value = e.detail;
   });
